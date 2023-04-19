@@ -3,6 +3,6 @@ export default function uploadPhoto(filename) {
     if (filename) {
       resolve();
     }
-    reject();
+    reject(Error(`${filename} cannot be processed`));
   });
 }
