@@ -10,7 +10,9 @@ export default function handleProfileSignup(firstName, lastName, filename) {
       responses.map((response) => ({
         status: response.status,
         value:
-          response.status === 'fulfilled' ? response.status : response.reason,
+          response.status === 'fulfilled'
+            ? response.status
+            : String(response.reason),
       }));
     })
     .catch(() => {

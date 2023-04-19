@@ -5,8 +5,10 @@ export default function handleProfileSignup() {
   const profile = uploadPhoto();
   const promise = Promise.all([user, profile]);
   promise
-    .then(([user, profile]) => {
-      console.log(`${profile.body} ${user.firstName} ${user.lastName}`);
+    .then((response) => {
+      console.log(
+        `${response[1].body} ${response[0].firstName} ${response[0].lastName},`
+      );
     })
     .catch(() => console.log(Error('Signup system offline')));
 }
